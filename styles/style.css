@@ -1,30 +1,57 @@
+/* common ================================== */
+.btn {
+  background-color: #ed4933;
+  color: white;
+  font-size: 12px;
+  text-transform: uppercase;
+  border: 1px solid #ed4933;
+  padding: 0.8em 2em;
+  letter-spacing: 2.64px;
+  font-weight: 600;
+  border-radius: 3px;
+}
+.btn:active {
+  outline: 2px solid white;
+  background-color: #f15540;
+}
+
 body {
-  font-family: "Open Sans", sans-serif;
+  /* kod devinam */
   margin-bottom: 600px;
 }
+
+/* HEADER ================================== */
+
 header {
-  position: fixed;
+  color: white;
   z-index: 10;
+  /* background-color: gray; */
+  position: fixed;
   top: 10px;
   left: 10px;
 }
-.main-nav {
+.main-nav,
+.logo {
   display: none;
 }
+
 .burger-menu-btn {
-  border: 1px solid transparent;
-  background-color: rgb(255, 255, 255, 0.634);
+  border: 1px solid rgb(115 115 115 / 63%);
+  background-color: rgb(115 115 115 / 63%);
   font-size: 25px;
   color: white;
   padding: 0.3em 0.6em;
 }
+
+/* HERO ================================== */
 .hero {
-  background: gray;
-  background: url(/img/banner.jpg) no-repeat center;
+  background-color: gray;
+  background: url("/img/banner.jpg") no-repeat center;
   background-size: cover;
-  /* paralax scroll efect */
+  /* paralax scroll efektas */
   background-attachment: fixed;
   height: 420px;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,7 +60,6 @@ header {
   padding-right: 44px;
   text-align: center;
   position: relative;
-  color: white;
 }
 .hero::before {
   position: absolute;
@@ -41,38 +67,99 @@ header {
   background-color: rgba(0, 0, 0, 0.3);
   /* top: 0;
   left: 0; */
-  /* width: 100%;
-  height: 100%; */
+  /* width: 100%; */
+  /* height: 100%; */
   /* right: 0;
   bottom: 0; */
   inset: 0;
 }
 .hero > * {
   z-index: 1;
+  /* position: relative; */
 }
 h1 {
   font-size: 18px;
+  padding: 7px 18px;
   text-transform: uppercase;
   border-top: 3px solid white;
   border-bottom: 2px solid white;
-  padding: 7px 18px;
   align-self: center;
 }
-.btn {
-  background-color: #ed4933;
-  border: 1px solid transparent;
-  color: white;
-  font-size: 12px;
-  padding: 0.8em;
-  text-transform: uppercase;
-  border-radius: 3px;
-  font-weight: 600;
-  letter-spacing: 2px;
+.hero-text {
+  font-size: 15px;
+  letter-spacing: 3.3px;
 }
-.btn:active {
-  outline: 2px solid white;
-  background-color: #e96250;
-}
-.hero a {
+.hero-text a {
   text-decoration: underline;
+}
+
+/* MEDIAS ==================== */
+
+@media screen and (min-width: 768px) {
+  .main-nav,
+  .logo {
+    display: block;
+  }
+  .burger-menu-btn {
+    display: none;
+  }
+  header {
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 28px 34px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-list {
+    display: flex;
+    align-items: center;
+  }
+  .nav-link {
+    padding: 0.5em 1em;
+    font-size: 18px;
+  }
+
+  .sub-menu {
+    /* display: none; */
+    top: -500px;
+    transition: top 0.3s;
+  }
+  .sub-menu {
+    background-color: #fff;
+    color: #222;
+    /* padding: 10px; */
+    position: absolute;
+    min-width: 120px;
+    /* top: calc(100% + 25px); */
+  }
+  .sub-link {
+    padding: 0.4em 0.8em;
+    display: block;
+
+    border-bottom: 1px solid gray;
+  }
+  .has-children:hover + .sub-menu {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    top: calc(100% + 25px);
+  }
+
+  .has-children::before {
+    content: "\f078";
+    font-family: FontAwesome;
+    font-size: 14px;
+    margin-right: 8px;
+    display: inline-block;
+    vertical-align: inherit;
+    transition: transform 0.4s;
+  }
+  .has-children:hover::before {
+    transform: rotate(180deg);
+  }
+  .nav-list > li {
+    position: relative;
+  }
 }
