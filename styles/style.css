@@ -10,6 +10,30 @@
   font-weight: 600;
   border-radius: 3px;
 }
+.burger {
+  width: 56px;
+}
+.burger .line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  display: block;
+  margin: 5px 0;
+  transition: all 0.5s;
+  transform-origin: left;
+}
+
+.burger:hover .ln1 {
+  transform: rotate(37deg);
+  width: 28px;
+}
+.burger:hover .ln2 {
+  opacity: 0;
+}
+.burger:hover .ln3 {
+  transform: rotate(-37deg);
+  width: 28px;
+}
 .btn:active {
   outline: 2px solid white;
   background-color: #f15540;
