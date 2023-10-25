@@ -39,9 +39,12 @@
   background-color: #f15540;
 }
 
-body {
-  /* kod devinam */
-  margin-bottom: 600px;
+.title--section {
+  font-size: 22px;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  text-align: center;
+  border-bottom: 2px solid white;
 }
 
 /* HEADER ================================== */
@@ -116,6 +119,62 @@ h1 {
 .hero-text a {
   text-decoration: underline;
 }
+/* blogs======= */
+.blogs {
+  background-color: #2b333e;
+  color: white;
+}
+.blog .content {
+  padding: 44px 44px;
+  text-align: center;
+}
+.blog__image {
+  width: 100%;
+}
+.blog__title {
+  font-size: 16px;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+.blog__text {
+  font-size: 15px;
+  line-height: 1.75;
+}
+/* cards */
+.cards--section {
+  background-color: #505393;
+  color: #fff;
+  padding: 44px;
+}
+.subtitle {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.cards-list {
+  display: flex;
+}
+.card {
+  flex-shrink: 0;
+  width: 240px;
+  display: grid;
+  text-align: center;
+  border: 1px solid #000;
+  padding: 20px;
+}
+.card__icon {
+  font-size: 26px;
+  margin-bottom: 26px;
+  color: #00ffcc;
+}
+.card_title {
+  margin-bottom: 0.5em;
+}
+.window {
+  /* background-color: rgba(255, 255, 255, 0.46);
+  border: 3px dashed tomato; */
+  overflow: auto;
+}
 
 /* MEDIAS ==================== */
 
@@ -135,6 +194,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: rgba(128, 128, 128, 0.436);
   }
   .nav-list {
     display: flex;
@@ -185,5 +245,24 @@ h1 {
   }
   .nav-list > li {
     position: relative;
+  }
+  .blog {
+    display: flex;
+    flex-direction: row;
+  }
+  .blog__image {
+    width: 40%;
+  }
+  .blog--reverse {
+    flex-direction: row-reverse;
+  }
+  .blog__text {
+    font-size: 16px;
+  }
+  .blog__title {
+    font-size: 24px;
+  }
+  .blog .content {
+    text-align: left;
   }
 }
